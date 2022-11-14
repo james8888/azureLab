@@ -1,0 +1,23 @@
+{
+	"name": "outputdataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkedservice4adflearningactivities01",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "emp1.csv",
+				"folderPath": "outbound",
+				"container": "sampledatafromstudies"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
