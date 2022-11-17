@@ -13,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "sampledatafromstudies/inbound/employees.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "sampledatafromstudies/outbound/emp1.csv"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
