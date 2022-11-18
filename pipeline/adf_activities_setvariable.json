@@ -1,0 +1,68 @@
+{
+	"name": "adf_activities_setvariable",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "x",
+					"value": "hello"
+				}
+			},
+			{
+				"name": "Set variable1_copy1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "y",
+					"value": "1000"
+				}
+			},
+			{
+				"name": "Set variable1_copy1_copy1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "currentdate",
+					"value": {
+						"value": "@utcnow()",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Set variable1_copy1_copy1_copy1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "subtime",
+					"value": {
+						"value": "@subtractFromTime(utcnow(), 10,'month')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"x": {
+				"type": "String"
+			},
+			"y": {
+				"type": "String"
+			},
+			"currentdate": {
+				"type": "String"
+			},
+			"subtime": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
