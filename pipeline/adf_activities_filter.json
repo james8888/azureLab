@@ -1,0 +1,39 @@
+{
+	"name": "adf_activities_filter",
+	"properties": {
+		"activities": [
+			{
+				"name": "Filter1",
+				"type": "Filter",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.numbers",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@greaterOrEquals(item(),4)",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"numbers": {
+				"type": "array",
+				"defaultValue": [
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8
+				]
+			}
+		},
+		"annotations": []
+	}
+}
