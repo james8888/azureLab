@@ -1,0 +1,39 @@
+{
+	"name": "adf_activities_foreach",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.countires",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": []
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"countires": {
+				"type": "array",
+				"defaultValue": [
+					"inida",
+					"uk",
+					"usa"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
