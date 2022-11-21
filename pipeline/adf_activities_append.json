@@ -1,0 +1,78 @@
+{
+	"name": "adf_activities_append",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.country",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Append variable1",
+							"type": "AppendVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "countryOutpur",
+								"value": {
+									"value": "@item()",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "countryNamelist",
+					"value": {
+						"value": "@pipeline().parameters.country",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"country": {
+				"type": "array",
+				"defaultValue": [
+					"usa",
+					"India",
+					"uk",
+					"germany"
+				]
+			}
+		},
+		"variables": {
+			"countryName": {
+				"type": "String"
+			},
+			"countryOutpur": {
+				"type": "Array"
+			},
+			"countryNamelist": {
+				"type": "Array"
+			}
+		},
+		"annotations": []
+	}
+}
