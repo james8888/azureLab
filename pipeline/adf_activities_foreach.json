@@ -18,7 +18,14 @@
 							"name": "Set variable1",
 							"type": "SetVariable",
 							"dependsOn": [],
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "countryname",
+								"value": {
+									"value": "@item()",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
@@ -32,6 +39,11 @@
 					"uk",
 					"usa"
 				]
+			}
+		},
+		"variables": {
+			"countryname": {
+				"type": "String"
 			}
 		},
 		"annotations": []
