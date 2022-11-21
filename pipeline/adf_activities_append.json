@@ -20,9 +20,29 @@
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "countryOutpur",
+								"variableName": "countryOutput",
 								"value": {
 									"value": "@item()",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Set variable2",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Append variable1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "countryNamelistInner",
+								"value": {
+									"value": "@variables('countryOutput')",
 									"type": "Expression"
 								}
 							}
@@ -45,7 +65,7 @@
 				"typeProperties": {
 					"variableName": "countryNamelist",
 					"value": {
-						"value": "@pipeline().parameters.country",
+						"value": "@variables('countryOutput')",
 						"type": "Expression"
 					}
 				}
@@ -63,10 +83,13 @@
 			}
 		},
 		"variables": {
-			"countryOutpur": {
+			"countryOutput": {
 				"type": "Array"
 			},
 			"countryNamelist": {
+				"type": "Array"
+			},
+			"countryNamelistInner": {
 				"type": "Array"
 			}
 		},
