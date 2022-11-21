@@ -27,7 +27,7 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "OutboundFiles",
+						"referenceName": "dslookup",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
