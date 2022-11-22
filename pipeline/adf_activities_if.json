@@ -1,0 +1,43 @@
+{
+	"name": "adf_activities_if",
+	"properties": {
+		"activities": [
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(pipeline().parameters.test, 10)",
+						"type": "Expression"
+					},
+					"ifTrueActivities": [
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "x",
+								"value": "yes"
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"test": {
+				"type": "int",
+				"defaultValue": 10
+			}
+		},
+		"variables": {
+			"x": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
